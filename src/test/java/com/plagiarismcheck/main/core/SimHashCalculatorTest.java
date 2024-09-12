@@ -1,6 +1,5 @@
 package com.plagiarismcheck.main.core;
 
-import com.plagiarismcheck.main.core.SimHashCalculator;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
