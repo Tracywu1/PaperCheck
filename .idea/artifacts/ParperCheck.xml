@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ParperCheck">
+    <output-path>$PROJECT_DIR$/out/artifacts/ParperCheck</output-path>
+    <root id="archive" name="ParperCheck.jar" />
+  </artifact>
+</component>
