@@ -21,10 +21,11 @@ public class HashUtil {
 
     /**
      * 计算字符串的哈希值
+     *
      * @param word 输入字符串
      * @return 哈希值（BigInteger）
      */
-    public static BigInteger hash(String word) {
+    public static BigInteger hash(String word){
         byte[] digest;
         synchronized (md) {
             digest = md.digest(word.getBytes(StandardCharsets.UTF_8));

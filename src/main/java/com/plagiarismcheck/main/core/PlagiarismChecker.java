@@ -1,6 +1,7 @@
 package com.plagiarismcheck.main.core;
 
 import com.huaban.analysis.jieba.JiebaSegmenter;
+import com.plagiarismcheck.main.exception.PlagiarismException;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -28,15 +29,15 @@ public class PlagiarismChecker {
     /**
      * 检查两段文本之间的抄袭程度。
      *
-     * @param originalText 原始文本。
+     * @param originalText    原始文本。
      * @param plagiarizedText 被检查抄袭的文本。
      * @return 返回一个0到1之间的浮点数，表示抄袭程度，越接近1表示抄袭越严重。
      */
-    public static double checkPlagiarism(String originalText, String plagiarizedText){
+    public static double checkPlagiarism(String originalText, String plagiarizedText) throws PlagiarismException.EmptyTextException {
         // 处理空文本的情况
         if (originalText == null || originalText.trim().isEmpty() ||
                 plagiarizedText == null || plagiarizedText.trim().isEmpty()) {
-            return 0.0;
+            throw new PlagiarismException.EmptyTextException("Original text cannot be empty");
         }
 
         // 如果两个文本都是短文本，使用词级别的相似度计算

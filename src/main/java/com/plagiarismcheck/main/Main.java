@@ -6,6 +6,7 @@ import com.plagiarismcheck.main.util.FileUtil;
 /**
  * 主类，包含程序的入口点。
  * 负责处理命令行参数并协调整个查重过程。
+ *
  * @author Lenovo
  */
 public class Main {

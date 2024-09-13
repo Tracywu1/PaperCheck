@@ -9,6 +9,7 @@ public class FileUtil {
 
     /**
      * 读取文件内容
+     *
      * @param filePath 文件路径
      * @return 文件内容字符串
      * @throws IOException 如果文件读取出错
@@ -31,7 +32,8 @@ public class FileUtil {
 
     /**
      * 将相似度结果写入文件
-     * @param filePath 输出文件路径
+     *
+     * @param filePath   输出文件路径
      * @param similarity 计算得到的相似度
      * @throws IOException 如果文件写入出错
      */

@@ -11,6 +11,7 @@ import java.util.List;
 /**
  * SimHashCalculator 类用于计算给定文本的 SimHash 值。
  * SimHash 是一种用于快速估计两个文本相似度的算法，通过计算文本的哈希值来实现。
+ *
  * @author Lenovo
  */
 public class SimHashCalculator {
@@ -33,14 +34,17 @@ public class SimHashCalculator {
      * @param text 输入的文本字符串
      * @return 文本的 SimHash 值，以二进制字符串形式表示
      */
-    public static String getSimHash(String text){
+    public static String getSimHash(String text) {
+
         if (text == null || text.trim().isEmpty()) {
             // 对于空文本，返回全0的SimHash
             return String.join("", Collections.nCopies(Constants.HASH_BITS, "0"));
         }
 
+
         // 使用jieba分词对文本进行分词处理
         List<String> words = getSegmenter().sentenceProcess(text);
+
 
         // 使用数组来存储词频，避免使用流操作
         long[] v = new long[Constants.HASH_BITS];

@@ -1,6 +1,7 @@
 package com.plagiarismcheck.main.util;
 
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 import java.math.BigInteger;
@@ -8,7 +9,7 @@ import java.math.BigInteger;
 public class HashUtilTest {
 
     @Test
-    public void testHashWithNormalString(){
+    public void testHashWithNormalString() {
         // 测试普通字符串的哈希计算
         String input = "test string";
         BigInteger hash = HashUtil.hash(input);
@@ -17,7 +18,7 @@ public class HashUtilTest {
     }
 
     @Test
-    public void testHashConsistency(){
+    public void testHashConsistency() {
         // 测试哈希计算的一致性
         String input = "consistency test string";
         BigInteger hash1 = HashUtil.hash(input);
@@ -26,7 +27,7 @@ public class HashUtilTest {
     }
 
     @Test
-    public void testHashWithEmptyString(){
+    public void testHashWithEmptyString() {
         // 测试空字符串的哈希计算
         String input = "";
         BigInteger hash = HashUtil.hash(input);
@@ -34,7 +35,7 @@ public class HashUtilTest {
     }
 
     @Test
-    public void testHashWithLongString(){
+    public void testHashWithLongString() {
         // 测试长字符串的哈希计算
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 1000; i++) {
