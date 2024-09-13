@@ -5,7 +5,6 @@ import com.plagiarismcheck.main.config.Constants;
 import com.plagiarismcheck.main.util.HashUtil;
 
 import java.math.BigInteger;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -35,12 +34,6 @@ public class SimHashCalculator {
      * @return 文本的 SimHash 值，以二进制字符串形式表示
      */
     public static String getSimHash(String text) {
-
-        if (text == null || text.trim().isEmpty()) {
-            // 对于空文本，返回全0的SimHash
-            return String.join("", Collections.nCopies(Constants.HASH_BITS, "0"));
-        }
-
 
         // 使用jieba分词对文本进行分词处理
         List<String> words = getSegmenter().sentenceProcess(text);
