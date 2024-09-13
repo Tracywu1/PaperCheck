@@ -9,7 +9,7 @@ public class PlagiarismCheckerTest {
 
     // 测试检查抄袭的功能
     @Test
-    public void testCheckPlagiarism() throws PlagiarismException.EmptyTextException {
+    public void testCheckPlagiarismWithSimilarTexts() throws PlagiarismException.EmptyTextException {
         // 定义原始文本和涉嫌抄袭的文本
         String originalText = "今天是星期天，天气晴，今天晚上我要去看电影。";
         String plagiarizedText = "今天是周天，天气晴朗，我晚上要去看电影。";

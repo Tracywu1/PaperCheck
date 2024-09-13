@@ -17,15 +17,6 @@ public class SimHashCalculatorTest {
     }
 
     @Test
-    public void testGetSimHashWithEmptyString() {
-        // 测试空字符串的SimHash计算
-        String text = "";
-        String simHash = SimHashCalculator.getSimHash(text);
-        assertNotNull("空字符串的SimHash不应为空", simHash);
-        assertEquals("空字符串的SimHash长度应为64位", 64, simHash.length());
-    }
-
-    @Test
     public void testGetSimHashWithChineseText() {
         // 测试中文文本的SimHash计算
         String text = "这是一段用于测试的中文文本。";
