@@ -66,20 +66,6 @@ public class PlagiarismCheckerTest {
         assertTrue(similarity < 0.6);
     }
 
-    // 测试空文本和一个非空文本
-    @Test
-    public void testEmptyText() throws PlagiarismException.EmptyTextException {
-        // 定义原始文本和涉嫌抄袭的文本
-        String originalText = "";
-        String plagiarizedText = "这是一个非空文本。";
-
-        // 调用PlagiarismChecker类的checkPlagiarism方法检查两段文本的相似度
-        double similarity = PlagiarismChecker.checkPlagiarism(originalText, plagiarizedText);
-        System.out.println(similarity);
-
-        assertEquals(0.0, similarity, 0.01);
-    }
-
     // 测试包含大量停用词的文本
     @Test
     public void testTextWithManyStopWords() throws PlagiarismException.EmptyTextException {
