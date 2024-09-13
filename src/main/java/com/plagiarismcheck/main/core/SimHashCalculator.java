@@ -43,31 +43,38 @@ public class SimHashCalculator {
                 .filter(word -> !Constants.STOP_WORDS.contains(word)) // 过滤停止词
                 .collect(Collectors.groupingBy(w -> w, Collectors.counting())); // 统计词频
 
+        // 如果过滤后没有剩余的词，返回全0的SimHash
+        if (wordFrequency.isEmpty()) {
+            return String.join("", Collections.nCopies(Constants.HASH_BITS, "0"));
+        }
+
         // 初始化用于存储每个哈希位的权重和的数组
         int[] v = new int[Constants.HASH_BITS];
 
         // 遍历词频映射，根据每个词的哈希值更新数组v
         for (Map.Entry<String, Long> entry : wordFrequency.entrySet()) {
-            BigInteger hash = HashUtil.hash(entry.getKey()); // 计算词的哈希值
-            long weight = entry.getValue(); // 获取词的权重（即词频）
+            BigInteger hash = HashUtil.hash(entry.getKey());
+            long weight = entry.getValue();
 
             // 遍历哈希值的每一位
             for (int i = 0; i < Constants.HASH_BITS; i++) {
-                // 如果当前位为1，则增加权重；否则，减少权重
-                if (hash.testBit(i)) {
-                    v[i] += (int) weight;
-                } else v[i] -= (int) weight;
+                if (hash.testBit(Constants.HASH_BITS - 1 - i)) {
+                    v[i] += weight;
+                } else {
+                    v[i] -= weight;
+                }
             }
         }
 
-        // 如果所有权重和为0，返回全0的SimHash
-        if (Arrays.stream(v).allMatch(bit -> bit == 0)) {
-            return String.join("", Collections.nCopies(Constants.HASH_BITS, "0"));
-        }
-
         // 将数组v中的每个元素转换为二进制字符串，并拼接成最终的SimHash值
-        return Arrays.stream(v)
-                .mapToObj(bit -> bit > 0 ? "1" : "0") // 根据权重和的符号转换为二进制字符串
-                .collect(Collectors.joining()); // 将所有二进制字符串拼接成一个字符串
+        StringBuilder simHashBuilder = new StringBuilder(Constants.HASH_BITS);
+        for (int i = 0; i < Constants.HASH_BITS; i++) {
+            if (v[i] >= 0) {
+                simHashBuilder.append("1");
+            } else {
+                simHashBuilder.append("0");
+            }
+        }
+        return simHashBuilder.toString();
     }
 }
