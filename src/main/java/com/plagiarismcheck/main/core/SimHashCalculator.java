@@ -5,7 +5,6 @@ import com.plagiarismcheck.main.config.Constants;
 import com.plagiarismcheck.main.util.HashUtil;
 
 import java.math.BigInteger;
-import java.security.NoSuchAlgorithmException;
 import java.util.Collections;
 import java.util.List;
 

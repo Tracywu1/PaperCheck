@@ -27,6 +27,8 @@ public class Main {
 
             FileUtil.writeResult(outputFile, similarity);
 
+            System.out.println("Original text: " + originalText.substring(0, Math.min(100, originalText.length())) + "...");
+            System.out.println("Plagiarized text: " + plagiarizedText.substring(0, Math.min(100, plagiarizedText.length())) + "...");
             System.out.println("Similarity: " + String.format("%.2f", similarity));
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());

@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 public class SimHashCalculatorTest {
 
     @Test
-    public void testGetSimHashWithNormalText() throws Exception {
+    public void testGetSimHashWithNormalText() {
         // 测试普通文本的SimHash计算
         String text = "This is a test text for SimHash calculation.";
         String simHash = SimHashCalculator.getSimHash(text);
@@ -16,7 +16,7 @@ public class SimHashCalculatorTest {
     }
 
     @Test
-    public void testGetSimHashWithEmptyString() throws Exception {
+    public void testGetSimHashWithEmptyString() {
         // 测试空字符串的SimHash计算
         String text = "";
         String simHash = SimHashCalculator.getSimHash(text);
@@ -25,7 +25,7 @@ public class SimHashCalculatorTest {
     }
 
     @Test
-    public void testGetSimHashWithChineseText() throws Exception {
+    public void testGetSimHashWithChineseText() {
         // 测试中文文本的SimHash计算
         String text = "这是一段用于测试的中文文本。";
         String simHash = SimHashCalculator.getSimHash(text);
@@ -34,7 +34,7 @@ public class SimHashCalculatorTest {
     }
 
     @Test
-    public void testGetSimHashConsistency() throws Exception {
+    public void testGetSimHashConsistency() {
         // 测试SimHash计算的一致性
         String text = "Consistency test text";
         String simHash1 = SimHashCalculator.getSimHash(text);
@@ -43,7 +43,7 @@ public class SimHashCalculatorTest {
     }
 
     @Test
-    public void testGetSimHashWithSpecialCharacters() throws Exception {
+    public void testGetSimHashWithSpecialCharacters() {
         // 测试包含特殊字符的文本的SimHash计算
         String text = "Special chars: !@#$%^&*()_+{}|:\"<>?[];',./";
         String simHash = SimHashCalculator.getSimHash(text);

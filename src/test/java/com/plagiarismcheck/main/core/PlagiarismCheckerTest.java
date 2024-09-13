@@ -8,7 +8,7 @@ public class PlagiarismCheckerTest {
 
     // 测试检查抄袭的功能
     @Test
-    public void testCheckPlagiarism() throws Exception {
+    public void testCheckPlagiarism() {
         // 定义原始文本和涉嫌抄袭的文本
         String originalText = "今天是星期天，天气晴，今天晚上我要去看电影。";
         String plagiarizedText = "今天是周天，天气晴朗，我晚上要去看电影。";
@@ -25,7 +25,7 @@ public class PlagiarismCheckerTest {
 
     // 测试检查两段完全相同文本的抄袭程度
     @Test
-    public void testCheckPlagiarismWithIdenticalTexts() throws Exception {
+    public void testCheckPlagiarismWithIdenticalTexts() {
         // 定义一段文本
         String text = "This is a test text.";
 
@@ -39,7 +39,7 @@ public class PlagiarismCheckerTest {
 
     // 测试部分内容重叠的文本
     @Test
-    public void testPartiallySimularTexts() throws Exception {
+    public void testPartiallySimularTexts() {
         // 定义原始文本和涉嫌抄袭的文本
         String originalText = "这是一个测试文本，用于检查相似度。";
         String plagiarizedText = "这是一个测试文本，用于其他目的。";
@@ -53,7 +53,7 @@ public class PlagiarismCheckerTest {
 
     // 测试完全不同的文本
     @Test
-    public void testCompletelyDifferentTexts() throws Exception {
+    public void testCompletelyDifferentTexts() {
         // 定义原始文本和涉嫌抄袭的文本
         String originalText = "今天晚上吃鸡，你来吃吗？";
         String plagiarizedText = "如何科学评价毛泽东思想？";
@@ -67,7 +67,7 @@ public class PlagiarismCheckerTest {
 
     // 测试空文本和一个非空文本
     @Test
-    public void testEmptyText() throws Exception {
+    public void testEmptyText() {
         // 定义原始文本和涉嫌抄袭的文本
         String originalText = "";
         String plagiarizedText = "这是一个非空文本。";
@@ -81,7 +81,7 @@ public class PlagiarismCheckerTest {
 
     // 测试包含大量停用词的文本
     @Test
-    public void testTextWithManyStopWords() throws Exception {
+    public void testTextWithManyStopWords() {
         // 定义原始文本和涉嫌抄袭的文本
         String originalText = "我是一个的很好的人，我有很多的朋友。";
         String plagiarizedText = "我是一个的很好的学生，我有很多的书本。";
@@ -95,7 +95,7 @@ public class PlagiarismCheckerTest {
 
     // 测试长文本
     @Test
-    public void testCheckPlagiarismWithLongTexts() throws Exception {
+    public void testCheckPlagiarismWithLongTexts() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 1000; i++) {
             sb.append("这是一个很长的文本，用于测试系统处理大量文本的能力。");

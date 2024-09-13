@@ -31,7 +31,6 @@ public class PlagiarismChecker {
      * @param originalText 原始文本。
      * @param plagiarizedText 被检查抄袭的文本。
      * @return 返回一个0到1之间的浮点数，表示抄袭程度，越接近1表示抄袭越严重。
-     * @throws Exception 如果在计算过程中发生错误。
      */
     public static double checkPlagiarism(String originalText, String plagiarizedText){
         // 处理空文本的情况

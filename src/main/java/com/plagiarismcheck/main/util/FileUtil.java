@@ -41,6 +41,4 @@ public class FileUtil {
         }
     }
 
-    public static void writeFile(String originalFilePath, String string) {
-    }
 }
